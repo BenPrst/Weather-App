@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@800&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -14,21 +15,65 @@ body {
 }
 
 header {
-  background-color: blue;
+  background: linear-gradient(90deg, #008bff 0%, #00d4ff 100%);
   height: 15vh;
   display: flex;
   align-items: center;
 }
 
+header h1 {
+  color: white;
+  margin-left: 2%;
+  font-family: 'Kanit', sans-serif;
+}
+
 main {
   display: flex;
   align-items: center;
-  margin-top: 3%;
   flex-direction: column;
+  background-image: url(/assets/images/clouds.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
 
-h1 {
-  color: white;
-  margin-left: 2%;
+main .inputContainer {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+main .inputContainer .inputCity {
+  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+main .inputContainer .btn {
+  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+main .weatherCard {
+  width: 90vw;
+  min-height: 40vh;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+}
+
+main .weatherCard .card {
+  background-color: red;
+  border-radius: 10px;
+  width: 20%;
+  margin: 1%;
 }
 /*# sourceMappingURL=style.css.map */

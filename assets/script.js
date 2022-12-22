@@ -29,26 +29,50 @@ async function locate() {
     let lon = data[0].lon;
     console.log(lon);
     console.log(lat);
-    weatherApp(lat, lon);
+    await getTemp(lat, lon);
   } catch (error) {
     console.error(error);
   }
 }
 
-async function weatherApp(lat, lon) {
+async function getTemp(lat, lon) {
   try {
-    //Call the api with your lat and lon
     let response = await fetch(
-      "https://api.openweathermap.org/data/2.5/forecast?lat=" +
-        lat +
-        "&lon=" +
-        lon +
-        "&appid=" +
-        apiKey
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
     );
-    let data = await response.json();
+    const data = await response.json();
     console.log(data);
+    const temperatureK = data["list"][0]["main"].temp;
+    const temperatureC = temperatureK - 273.15;
+    await displayTemp(temperatureC);
+    return temperatureC;
   } catch (error) {
     console.error(error);
   }
 }
+
+async function displayTemp(temperatureC) {
+  const tempCont = document.querySelector(".weatherCard");
+  tempCont.innerHTML = temperatureC;
+}
+
+//Get the weather
+// async function getTemp(lat, lon) {
+//   try {
+//     //Call the api to get the weather with your lat and lon
+//     let response = await fetch(
+//       "https://api.openweathermap.org/data/2.5/forecast?lat=" +
+//         lat +
+//         "&lon=" +
+//         lon +
+//         "&appid=" +
+//         apiKey
+//     );
+//     let data = await response.json();
+//     console.log(data);
+//     const forecast = data.list.slice(0, 5).map((period) => period.main.temp);
+//     return forecast;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }
