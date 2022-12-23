@@ -15,16 +15,15 @@ body {
 }
 
 header {
-  background: linear-gradient(90deg, #008bff 0%, #00d4ff 100%);
+  background: linear-gradient(90deg, rgb(0, 139, 255) 0%, rgb(0, 212, 255) 100%);
   height: 15vh;
   display: flex;
   align-items: center;
 }
-
 header h1 {
   color: white;
   margin-left: 2%;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 main {
@@ -36,12 +35,10 @@ main {
   background-position: center;
   min-height: 100vh;
 }
-
 main .inputContainer {
   margin-top: 2%;
   margin-bottom: 2%;
 }
-
 main .inputContainer .inputCity {
   background: rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.25);
@@ -49,7 +46,6 @@ main .inputContainer .inputCity {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
 main .inputContainer .btn {
   background: rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.25);
@@ -57,7 +53,6 @@ main .inputContainer .btn {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
 main .weatherCard {
   width: 90vw;
   min-height: 40vh;
@@ -69,11 +64,27 @@ main .weatherCard {
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
 }
-
 main .weatherCard .card {
-  background-color: red;
-  border-radius: 10px;
   width: 20%;
   margin: 1%;
 }
-/*# sourceMappingURL=style.css.map */
+main .weatherCard .card .topCard {
+  height: 20%;
+  background-color: rgba(100, 100, 100, 0.37);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+main .weatherCard .card .mainCard {
+  height: 80%;
+  background-color: white;
+  border-bottom-left-radius: 10px;
+  border-end-end-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp {
+  font-family: "Kanit", sans-serif;
+  font-size: 200%;
+}/*# sourceMappingURL=style.css.map */

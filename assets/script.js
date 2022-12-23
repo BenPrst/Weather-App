@@ -8,6 +8,7 @@ const apiKey = "8bf039e4e649d291e56dce63139febd4";
 
 let inputCity = document.querySelector(".inputCity");
 let button = document.querySelector(".btn");
+let mainCard = document.querySelector(".mainCard");
 
 button.addEventListener("click", () => locate());
 
@@ -44,16 +45,15 @@ async function getTemp(lat, lon) {
     console.log(data);
     const temperatureK = data["list"][0]["main"].temp;
     const temperatureC = temperatureK - 273.15;
-    await displayTemp(temperatureC);
-    return temperatureC;
+    const temp = temperatureC.toFixed(2);
+    const divTemp = document.createElement("div");
+    divTemp.innerHTML = temp;
+    divTemp.classList.add("temp");
+    mainCard.appendChild(divTemp);
+    return divTemp;
   } catch (error) {
     console.error(error);
   }
-}
-
-async function displayTemp(temperatureC) {
-  const tempCont = document.querySelector(".weatherCard");
-  tempCont.innerHTML = temperatureC;
 }
 
 //Get the weather

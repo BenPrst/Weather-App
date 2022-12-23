@@ -64,10 +64,28 @@ main{
         border: 1px solid rgba( 255, 255, 255, 0.18 );
         display: flex;
         .card{
-            background-color: red;
-            border-radius: 10px;
             width: 20%;
             margin: 1%;
+            .topCard{
+                height: 20%;
+                background-color: rgba(100, 100, 100, 0.37);
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            .mainCard{
+                height: 80%;
+                background-color: white;
+                border-bottom-left-radius: 10px;
+                border-end-end-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
+}
+
+.temp{
+    font-family: 'Kanit', sans-serif;
+    font-size: 200%;
 }
